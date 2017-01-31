@@ -110,7 +110,7 @@ namespace DirDel
                     {
                         if (Dirflag == fileOrDir.FILE)
                             System.IO.File.Delete(@item.SubItems[1].Text);
-                        else if (Dirflag == fileOrDir.DIR)
+                        else if (Dirflag == fileOrDir.DIR) //true -- 表示是否要递归删除
                             System.IO.Directory.Delete(@item.SubItems[1].Text,true); //ture denote recursively del
 
                         listViewSearch.Items.Remove(item);  //remove the selected item from listview
