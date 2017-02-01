@@ -28,7 +28,6 @@ foreach(FileInfo file in curFolder.GetFiles())
 参考
 - Book: Pro C# 5.0 and the .NET 4.5 Framework -> Chapter 20 -> The Directory(Info) and File(Info) Types
 
-![](http://img.blog.csdn.net/20141111102957709?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamlhbmdkbWRy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
 
 
 下面示例列出了“c:\”中以字母“c”开头的所有目录和文件
@@ -46,27 +45,23 @@ class App
         string searchPattern = "p*";
 
         DirectoryInfo di = new DirectoryInfo(path);
-        DirectoryInfo[] directories =
-            di.GetDirectories(searchPattern, SearchOption.TopDirectoryOnly);
+        DirectoryInfo[] directories = di.GetDirectories(searchPattern, SearchOption.TopDirectoryOnly);
 
-        FileInfo[] files =
-            di.GetFiles(searchPattern, SearchOption.TopDirectoryOnly);
+        FileInfo[] files = di.GetFiles(searchPattern, SearchOption.TopDirectoryOnly);
 
-        Console.WriteLine(
-            "Directories that begin with the letter \"c\" in {0}", path);
+        Console.WriteLine("Directories that begin with the letter \"c\" in {0}", path);
+        
         foreach (DirectoryInfo dir in directories)
         {
-            Console.WriteLine(
-                "{0,-25} {1,25}", dir.FullName, dir.LastWriteTime);
+            Console.WriteLine("{0,-25} {1,25}", dir.FullName, dir.LastWriteTime);
         }
 
         Console.WriteLine();
-        Console.WriteLine(
-            "Files that begin with the letter \"c\" in {0}", path);
+        Console.WriteLine("Files that begin with the letter \"c\" in {0}", path);
+        
         foreach (FileInfo file in files)
         {
-            Console.WriteLine(
-                "{0,-25} {1,25}", file.Name, file.LastWriteTime);
+            Console.WriteLine("{0,-25} {1,25}", file.Name, file.LastWriteTime);
         }
 
         Console.ReadLine();
